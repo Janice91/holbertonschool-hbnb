@@ -5,20 +5,31 @@ from app import facade
 ns = Namespace("amenities", description="Amenity operations")
 
 amenity_model = ns.model("Amenity", {
-    "name": fields.String(required=True)
+    "name": fields.String(required=True, description="Amenity name")
+})
+
+amenity_response = ns.model("AmenityResponse", {
+    "id":         fields.String(description="Amenity ID"),
+    "name":       fields.String(description="Amenity name"),
+    "created_at": fields.String(description="Creation date"),
+    "updated_at": fields.String(description="Last update date")
 })
 
 
 @ns.route("/")
 class AmenityList(Resource):
 
+    @ns.marshal_list_with(amenity_response)
+    @ns.response(200, "List of amenities retrieved successfully")
     def get(self):
         """List all amenities"""
-        return [a.to_dict() for a in facade.get_all_amenities()], 200
+        return facade.get_all_amenities(), 200
 
     @ns.expect(amenity_model, validate=True)
+    @ns.response(201, "Amenity created successfully")
+    @ns.response(400, "Invalid input data")
     def post(self):
-        """Create an amenity"""
+        """Create a new amenity"""
         try:
             amenity = facade.create_amenity(request.json)
             return amenity.to_dict(), 201
@@ -27,8 +38,11 @@ class AmenityList(Resource):
 
 
 @ns.route("/<string:amenity_id>")
+@ns.param("amenity_id", "The amenity identifier")
 class AmenityResource(Resource):
 
+    @ns.response(200, "Amenity found")
+    @ns.response(404, "Amenity not found")
     def get(self, amenity_id):
         """Get an amenity by ID"""
         amenity = facade.get_amenity(amenity_id)
@@ -37,6 +51,9 @@ class AmenityResource(Resource):
         return amenity.to_dict(), 200
 
     @ns.expect(amenity_model, validate=False)
+    @ns.response(200, "Amenity updated successfully")
+    @ns.response(400, "Invalid input data")
+    @ns.response(404, "Amenity not found")
     def put(self, amenity_id):
         """Update an amenity"""
         if not facade.get_amenity(amenity_id):
@@ -46,10 +63,3 @@ class AmenityResource(Resource):
             return updated.to_dict(), 200
         except ValueError as e:
             ns.abort(400, str(e))
-
-    def delete(self, amenity_id):
-        """Delete an amenity"""
-        if not facade.get_amenity(amenity_id):
-            ns.abort(404, "Amenity not found")
-        facade.delete_amenity(amenity_id)
-        return {"message": "Amenity deleted"}, 200
