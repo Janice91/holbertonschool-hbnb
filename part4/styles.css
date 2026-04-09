@@ -11,6 +11,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
+    border-bottom: 1px solid #ddd;
 }
 
 /* LOGO */
@@ -25,9 +26,28 @@ nav a {
     color: black;
 }
 
+.login-button {
+    background-color: #3498db;
+    color: white !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
 /* MAIN */
 main {
     padding: 20px;
+}
+
+/* FILTER */
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-section select {
+    margin-left: 10px;
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 /* PLACES CONTAINER */
@@ -45,13 +65,64 @@ main {
     width: 200px;
 }
 
-/* BUTTON */
-.details-button {
+/* BUTTONS */
+.details-button,
+button[type="submit"],
+button[type="button"] {
     background-color: #3498db;
     color: white;
     border: none;
-    padding: 8px;
+    padding: 8px 14px;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+.details-button:hover,
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #2176ae;
+}
+
+/* PLACE DETAILS */
+.place-details {
+    margin-bottom: 30px;
+}
+
+.place-info p {
+    margin: 6px 0;
+}
+
+/* REVIEW CARD */
+.review-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 0;
+    max-width: 500px;
+}
+
+.review-card p {
+    margin: 4px 0;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 /* FOOTER */
@@ -59,4 +130,6 @@ footer {
     text-align: center;
     margin-top: 20px;
     padding: 10px;
+    border-top: 1px solid #ddd;
+    color: #888;
 }

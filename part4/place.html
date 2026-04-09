@@ -2,57 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HBnB - Place Details</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
 <header>
-    <img src="logo.png" alt="Logo" class="logo">
+    <img src="logo.png" alt="HBnB Logo" class="logo">
     <nav>
         <a href="index.html">Home</a>
-        <a href="login.html" class="login-button">Login</a>
+        <a href="login.html" class="login-button" id="login-link">Login</a>
     </nav>
 </header>
-
 <main>
-
-    <div class="place-details">
-        <h1>Cozy Apartment</h1>
-
+    <section class="place-details" id="place-details">
+        <h1 id="place-name">Loading...</h1>
         <div class="place-info">
-            <p>Host: John Doe</p>
-            <p>Price: 80€/night</p>
-            <p>Description: A comfortable apartment in the city center with all amenities.</p>
-            <p>Amenities: WiFi, Kitchen, TV, Heating</p>
+            <p>Host: <span id="place-host"></span></p>
+            <p>Price: <span id="place-price"></span>€/night</p>
+            <p>Description: <span id="place-description"></span></p>
+            <p>Amenities: <span id="place-amenities"></span></p>
         </div>
-    </div>
-
-    <h2>Reviews</h2>
-
-    <div class="review-card">
-        <p>Great location and very cozy!</p>
-        <p>User: Alice</p>
-        <p>Rating: ⭐⭐⭐⭐</p>
-    </div>
-
-    <div class="review-card">
-        <p>Very clean and comfortable stay.</p>
-        <p>User: Bob</p>
-        <p>Rating: ⭐⭐⭐⭐⭐</p>
-    </div>
-
-    <!-- Bouton pour ajouter un review si connecté -->
-    <a href="add_review.html">
-        <button>Add Review</button>
-    </a>
-
+    </section>
+    <section>
+        <h2>Reviews</h2>
+        <div id="reviews-container"></div>
+    </section>
+    <section id="add-review" style="display: none;">
+        <a id="add-review-link" href="add_review.html">
+            <button type="button">Add Review</button>
+        </a>
+    </section>
 </main>
-
 <footer>
     <p>All rights reserved</p>
 </footer>
-
+<script src="scripts.js"></script>
 </body>
 </html>
