@@ -80,6 +80,7 @@ async function fetchPlaces(token) {
         document.getElementById('places-list').innerHTML =
             '<div class="empty-state"><p>Unable to load places.</p></div>';
         console.error(err);
+        deleteCookie('token');
     }
 }
 
@@ -114,7 +115,7 @@ function initIndexPage() {
     const token     = getCookie('token');
     const loginLink = document.getElementById('login-link');
     if (!token) {
-        loginLink.style.display = 'block';
+        loginLink.style.display = 'inline-block';
     } else {
         loginLink.style.display = 'none';
         fetchPlaces(token);
