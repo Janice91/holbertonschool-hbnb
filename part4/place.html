@@ -3,39 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBnB - Place Details</title>
+    <title>HBnB — Place Details</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
-    <img src="logo.png" alt="HBnB Logo" class="logo">
+    <a href="index.html" class="logo-text">HBnB</a>
     <nav>
         <a href="index.html">Home</a>
         <a href="login.html" class="login-button" id="login-link">Login</a>
     </nav>
 </header>
 <main>
+    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80" alt="Place" class="place-hero" id="place-image">
     <section class="place-details" id="place-details">
         <h1 id="place-name">Loading...</h1>
         <div class="place-info">
-            <p>Host: <span id="place-host"></span></p>
-            <p>Price: <span id="place-price"></span>€/night</p>
-            <p>Description: <span id="place-description"></span></p>
-            <p>Amenities: <span id="place-amenities"></span></p>
+            <p><strong>Host</strong><span id="place-host"></span></p>
+            <p><strong>Price</strong><span id="place-price"></span>€/night</p>
+            <p><strong>Description</strong><span id="place-description"></span></p>
+            <p><strong>Amenities</strong><span id="place-amenities"></span></p>
         </div>
     </section>
-    <section>
-        <h2>Reviews</h2>
+    <section class="reviews-section">
+        <h2>Guest Reviews</h2>
         <div id="reviews-container"></div>
     </section>
     <section id="add-review" style="display: none;">
+        <h2>Share your experience</h2>
         <a id="add-review-link" href="add_review.html">
-            <button type="button">Add Review</button>
+            <button type="button">Write a Review</button>
         </a>
     </section>
 </main>
 <footer>
-    <p>All rights reserved</p>
+    <p>All rights reserved &copy; HBnB 2025</p>
 </footer>
 <script src="scripts.js"></script>
 </body>
