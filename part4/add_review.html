@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HBnB - Add Review</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html" class="login-button">Login</a>
+    </nav>
+</header>
+
+<main>
+
+    <h1>Add a Review</h1>
+
+    <form class="add-review">
+        <label for="username">Your Name:</label>
+        <input type="text" id="username" required>
+
+        <label for="rating">Rating (1-5):</label>
+        <input type="number" id="rating" min="1" max="5" required>
+
+        <label for="comment">Comment:</label>
+        <textarea id="comment" rows="4" required></textarea>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+</main>
+
+<footer>
+    <p>All rights reserved</p>
+</footer>
+
+</body>
+</html>
