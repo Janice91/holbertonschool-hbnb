@@ -1,0 +1,62 @@
+/* GENERAL */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+/* LOGO */
+.logo {
+    width: 60px;
+}
+
+/* NAVIGATION */
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+/* MAIN */
+main {
+    padding: 20px;
+}
+
+/* PLACES CONTAINER */
+.places {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* PLACE CARD */
+.place-card {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px;
+}
+
+/* BUTTON */
+.details-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
